@@ -11,6 +11,7 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": "sp500_stocks.csv",
+				"folderPath": "sp500_stocks",
 				"container": "bronze"
 			},
 			"columnDelimiter": ",",
