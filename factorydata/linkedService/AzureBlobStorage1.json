@@ -1,0 +1,11 @@
+{
+	"name": "AzureBlobStorage1",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobStorage",
+		"typeProperties": {
+			"containerUri": "https://extsp500.blob.core.windows.net/cont-ext-sp-500",
+			"authenticationType": "Anonymous"
+		}
+	}
+}
