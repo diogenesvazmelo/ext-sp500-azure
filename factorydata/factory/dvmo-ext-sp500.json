@@ -1,0 +1,9 @@
+{
+	"name": "dvmo-ext-sp500",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "6ca1228b-68df-4fae-9b53-0eb9bf8268d7",
+		"tenantId": "3cc76ef9-7a16-4166-b4d2-220616cba6e4"
+	}
+}
