@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks?select=sp500_stocks.csv",
+			"url": "www.kaggle.com",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Basic",
 			"userName": "digenesvazmelo",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkUxQkNELTQyMjItNEU4OS1BODcyLUFCRDBCOTQ2MDAxOV9iYWVlN2RmNy0zNWJlLTRhYjktYWZmNy00MzM5MGU3YjUzYWEiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkUxQkNELTQyMjItNEU4OS1BODcyLUFCRDBCOTQ2MDAxOV83M2VjN2NjMy1lOTg3LTQ2NTQtYmQ5MC05N2EzNGZhNjBiMzQiDQp9"
 		}
 	}
 }
