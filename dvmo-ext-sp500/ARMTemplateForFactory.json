@@ -274,8 +274,7 @@
 						"container": "bronze"
 					},
 					"columnDelimiter": ",",
-					"rowDelimiter": "\r",
-					"escapeChar": "\\",
+					"escapeChar": "\"",
 					"firstRowAsHeader": true,
 					"quoteChar": null
 				},
