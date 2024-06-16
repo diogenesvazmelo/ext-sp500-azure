@@ -25,8 +25,7 @@
 						"formatSettings": {
 							"type": "DelimitedTextReadSettings",
 							"compressionProperties": {
-								"type": "ZipDeflateReadSettings",
-								"preserveZipFileNameAsFolder": true
+								"type": "ZipDeflateReadSettings"
 							}
 						}
 					},
@@ -54,7 +53,7 @@
 				},
 				"inputs": [
 					{
-						"referenceName": "ExtZip",
+						"referenceName": "ExtZip2",
 						"type": "DatasetReference"
 					}
 				],
