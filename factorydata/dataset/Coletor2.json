@@ -10,10 +10,13 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
+				"fileName": {
+					"value": "teste_unzip",
+					"type": "Expression"
+				},
 				"container": "bronze"
 			},
 			"columnDelimiter": ",",
-			"compressionCodec": "ZipDeflate",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
