@@ -366,6 +366,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
+						"fileName": "sp-500-stocks.zip",
 						"folderPath": "ext",
 						"container": "raw"
 					},
