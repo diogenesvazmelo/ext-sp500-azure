@@ -344,6 +344,35 @@
 			]
 		},
 		{
+			"name": "[concat(parameters('factoryName'), '/ExtZip2')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "sp-500-stocks.zip",
+						"container": "bronze"
+					},
+					"columnDelimiter": ",",
+					"compressionCodec": "ZipDeflate",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": []
+			},
+			"dependsOn": [
+				"[concat(variables('factoryId'), '/linkedServices/AzureBlobStorage1')]"
+			]
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/RestResource1')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -557,8 +586,7 @@
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings",
 									"compressionProperties": {
-										"type": "ZipDeflateReadSettings",
-										"preserveZipFileNameAsFolder": true
+										"type": "ZipDeflateReadSettings"
 									}
 								}
 							},
@@ -586,7 +614,7 @@
 						},
 						"inputs": [
 							{
-								"referenceName": "ExtZip",
+								"referenceName": "ExtZip2",
 								"type": "DatasetReference",
 								"parameters": {}
 							}
@@ -606,7 +634,7 @@
 				"annotations": []
 			},
 			"dependsOn": [
-				"[concat(variables('factoryId'), '/datasets/ExtZip')]",
+				"[concat(variables('factoryId'), '/datasets/ExtZip2')]",
 				"[concat(variables('factoryId'), '/datasets/Coletor2')]"
 			]
 		}
