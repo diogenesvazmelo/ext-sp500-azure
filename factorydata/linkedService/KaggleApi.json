@@ -5,11 +5,11 @@
 		"annotations": [],
 		"type": "RestService",
 		"typeProperties": {
-			"url": "https://www.kaggle.com/api/v1/competitions/list",
+			"url": "https://www.kaggle.com/api/v1/datasets/download/andrewmvd/sp-500-stocks",
 			"enableServerCertificateValidation": false,
 			"authenticationType": "Basic",
 			"userName": "digenesvazmelo",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkUxQkNELTQyMjItNEU4OS1BODcyLUFCRDBCOTQ2MDAxOV9iMzY2MTA2OC00N2YzLTRkMzktYmY5YS1lN2Q2ZjgzZmEwYTkiDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDBGMkUxQkNELTQyMjItNEU4OS1BODcyLUFCRDBCOTQ2MDAxOV9jYmRhNWM2Yy03NzI5LTQ3NmQtYmEwOS00NWFhM2NhZDFjY2IiDQp9"
 		}
 	}
 }
