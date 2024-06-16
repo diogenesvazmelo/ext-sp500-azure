@@ -40,7 +40,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sp500stocks",
-				"sp500stocks derive(FolderName = Date) ~> derivedColumn1",
+				"sp500stocks derive(FolderName = 'proyecto_sp500_'+Date+'.csv') ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     rowUrlColumn:'FolderName',",

@@ -3,7 +3,7 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "Ext Kaggle",
+				"name": "Raw - Ext Kaggle",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -47,11 +47,11 @@
 				]
 			},
 			{
-				"name": "Unzip 1",
+				"name": "Raw - Unzip 1",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Ext Kaggle",
+						"activity": "Raw - Ext Kaggle",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -117,11 +117,11 @@
 				]
 			},
 			{
-				"name": "Unzip 2",
+				"name": "Bronze - Unzip 2",
 				"type": "Copy",
 				"dependsOn": [
 					{
-						"activity": "Unzip 1",
+						"activity": "Raw - Unzip 1",
 						"dependencyConditions": [
 							"Succeeded"
 						]
@@ -170,6 +170,37 @@
 						"type": "DatasetReference"
 					}
 				]
+			},
+			{
+				"name": "dataflow1",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [
+					{
+						"activity": "Bronze - Unzip 2",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "dataflow1",
+						"type": "DataFlowReference"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []
