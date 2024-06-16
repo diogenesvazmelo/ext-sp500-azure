@@ -13,9 +13,10 @@
 				"container": "bronze"
 			},
 			"columnDelimiter": ",",
+			"rowDelimiter": "\r",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
-			"quoteChar": "\""
+			"quoteChar": null
 		},
 		"schema": []
 	}
