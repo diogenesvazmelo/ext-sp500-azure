@@ -110,7 +110,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "Coletor",
+						"referenceName": "Coletor2",
 						"type": "DatasetReference"
 					}
 				]
