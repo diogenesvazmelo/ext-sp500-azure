@@ -134,7 +134,8 @@
 								"formatSettings": {
 									"type": "DelimitedTextReadSettings",
 									"compressionProperties": {
-										"type": "ZipDeflateReadSettings"
+										"type": "ZipDeflateReadSettings",
+										"preserveZipFileNameAsFolder": true
 									}
 								}
 							},
@@ -273,9 +274,10 @@
 						"container": "bronze"
 					},
 					"columnDelimiter": ",",
+					"rowDelimiter": "\r",
 					"escapeChar": "\\",
 					"firstRowAsHeader": true,
-					"quoteChar": "\""
+					"quoteChar": null
 				},
 				"schema": []
 			},
