@@ -172,7 +172,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"container": "bronze"
+						"container": "raw"
 					},
 					"compression": {
 						"type": "ZipDeflate",
