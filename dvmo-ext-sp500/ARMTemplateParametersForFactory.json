@@ -1,0 +1,39 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "dvmo-ext-sp500"
+		},
+		"AzureBlobStorage1_connectionString": {
+			"value": ""
+		},
+		"AzureFunction1_functionKey": {
+			"value": ""
+		},
+		"HttpServer2_password": {
+			"value": ""
+		},
+		"KaggleApi_password": {
+			"value": ""
+		},
+		"AzureFunction1_properties_typeProperties_functionAppUrl": {
+			"value": "https://kaggle-sp500-consumer-2.azurewebsites.net"
+		},
+		"HttpServer1_properties_typeProperties_url": {
+			"value": "https://www.kaggle.com/datasets/andrewmvd/sp-500-stocks?select=sp500_stocks.csv"
+		},
+		"HttpServer2_properties_typeProperties_url": {
+			"value": "https://www.kaggle.com/api/v1/datasets/download/andrewmvd/sp-500-stocks"
+		},
+		"HttpServer2_properties_typeProperties_userName": {
+			"value": "digenesvazmelo"
+		},
+		"KaggleApi_properties_typeProperties_url": {
+			"value": "https://www.kaggle.com/api/v1/datasets/download/andrewmvd/sp-500-stocks"
+		},
+		"KaggleApi_properties_typeProperties_userName": {
+			"value": "digenesvazmelo"
+		}
+	}
+}
