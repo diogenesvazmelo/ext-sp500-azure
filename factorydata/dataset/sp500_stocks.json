@@ -21,7 +21,7 @@
 		},
 		"schema": [
 			{
-				"name": "Exchange",
+				"name": "Date",
 				"type": "String"
 			},
 			{
@@ -29,59 +29,27 @@
 				"type": "String"
 			},
 			{
-				"name": "Shortname",
+				"name": "Adj Close",
 				"type": "String"
 			},
 			{
-				"name": "Longname",
+				"name": "Close",
 				"type": "String"
 			},
 			{
-				"name": "Sector",
+				"name": "High",
 				"type": "String"
 			},
 			{
-				"name": "Industry",
+				"name": "Low",
 				"type": "String"
 			},
 			{
-				"name": "Currentprice",
+				"name": "Open",
 				"type": "String"
 			},
 			{
-				"name": "Marketcap",
-				"type": "String"
-			},
-			{
-				"name": "Ebitda",
-				"type": "String"
-			},
-			{
-				"name": "Revenuegrowth",
-				"type": "String"
-			},
-			{
-				"name": "City",
-				"type": "String"
-			},
-			{
-				"name": "State",
-				"type": "String"
-			},
-			{
-				"name": "Country",
-				"type": "String"
-			},
-			{
-				"name": "Fulltimeemployees",
-				"type": "String"
-			},
-			{
-				"name": "Longbusinesssummary",
-				"type": "String"
-			},
-			{
-				"name": "Weight",
+				"name": "Volume",
 				"type": "String"
 			}
 		]
