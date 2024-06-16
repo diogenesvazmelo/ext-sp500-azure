@@ -1,24 +1,19 @@
 {
-	"name": "CopyKaggleSp500_flx",
+	"name": "pipeline1",
 	"properties": {
 		"activities": [
 			{
-				"name": "Copy_flx",
+				"name": "Copy data1",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
-					"timeout": "0.00:10:00",
+					"timeout": "0.12:00:00",
 					"retry": 0,
 					"retryIntervalInSeconds": 30,
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Destination",
-						"value": "bronze//sp500_stocks.csv"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
 					"source": {
 						"type": "RestSource",
@@ -27,14 +22,9 @@
 						"requestMethod": "GET"
 					},
 					"sink": {
-						"type": "DelimitedTextSink",
+						"type": "BinarySink",
 						"storeSettings": {
 							"type": "AzureBlobStorageWriteSettings"
-						},
-						"formatSettings": {
-							"type": "DelimitedTextWriteSettings",
-							"quoteAllText": true,
-							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false
@@ -47,7 +37,7 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "DestinationDataset_flx",
+						"referenceName": "Binary1",
 						"type": "DatasetReference"
 					}
 				]
