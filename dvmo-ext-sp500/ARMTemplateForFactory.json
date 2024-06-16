@@ -505,7 +505,8 @@
 					"location": {
 						"type": "AzureBlobStorageLocation",
 						"fileName": "sp-500-stocks.zip",
-						"container": "bronze"
+						"folderPath": "ext",
+						"container": "raw"
 					},
 					"compression": {
 						"type": "ZipDeflate",
