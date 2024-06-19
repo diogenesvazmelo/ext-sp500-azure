@@ -15,6 +15,10 @@
 			"type": "secureString",
 			"metadata": "Cadeia de caracteres segura para 'accountKey' de 'AzureDataLakeStorage1'"
 		},
+		"AzureDataLakeStorage2_accountKey": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'accountKey' de 'AzureDataLakeStorage2'"
+		},
 		"AzureDatabricksLinkedService_accessToken": {
 			"type": "secureString",
 			"metadata": "Cadeia de caracteres segura para 'accessToken' de 'AzureDatabricksLinkedService'"
@@ -34,6 +38,10 @@
 		"AzureDataLakeStorage1_properties_typeProperties_url": {
 			"type": "string",
 			"defaultValue": "https://extsp500adls2.dfs.core.windows.net/"
+		},
+		"AzureDataLakeStorage2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://extsp500adf.dfs.core.windows.net/"
 		},
 		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
 			"type": "string",
@@ -96,6 +104,9 @@
 					"AzureDataLakeStorage1_accountKey": {
 						"value": "[parameters('AzureDataLakeStorage1_accountKey')]"
 					},
+					"AzureDataLakeStorage2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage2_accountKey')]"
+					},
 					"AzureDatabricksLinkedService_accessToken": {
 						"value": "[parameters('AzureDatabricksLinkedService_accessToken')]"
 					},
@@ -110,6 +121,9 @@
 					},
 					"AzureDataLakeStorage1_properties_typeProperties_url": {
 						"value": "[parameters('AzureDataLakeStorage1_properties_typeProperties_url')]"
+					},
+					"AzureDataLakeStorage2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage2_properties_typeProperties_url')]"
 					},
 					"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
 						"value": "[parameters('AzureDatabricksLinkedService_properties_typeProperties_existingClusterId')]"
