@@ -10,7 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"container": "silver"
+				"folderPath": "silver/sp500_stocks",
+				"container": "adf"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
