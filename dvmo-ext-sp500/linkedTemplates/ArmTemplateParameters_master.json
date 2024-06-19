@@ -17,6 +17,9 @@
 		"KaggleApi_password": {
 			"value": ""
 		},
+		"AzureDatabricksLinkedService_accessToken": {
+			"value": ""
+		},
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"value": "https://kaggle-sp500-consumer-2.azurewebsites.net"
 		},
@@ -34,6 +37,9 @@
 		},
 		"KaggleApi_properties_typeProperties_userName": {
 			"value": "digenesvazmelo"
+		},
+		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+			"value": "0617-024657-5j5slhdr"
 		},
 		"containerUri": {
 			"value": ""

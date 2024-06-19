@@ -23,6 +23,10 @@
 			"type": "secureString",
 			"metadata": "Cadeia de caracteres segura para 'password' de 'KaggleApi'"
 		},
+		"AzureDatabricksLinkedService_accessToken": {
+			"type": "secureString",
+			"metadata": "Cadeia de caracteres segura para 'accessToken' de 'AzureDatabricksLinkedService'"
+		},
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"type": "string",
 			"defaultValue": "https://kaggle-sp500-consumer-2.azurewebsites.net"
@@ -46,6 +50,10 @@
 		"KaggleApi_properties_typeProperties_userName": {
 			"type": "string",
 			"defaultValue": "digenesvazmelo"
+		},
+		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+			"type": "string",
+			"defaultValue": "0617-024657-5j5slhdr"
 		},
 		"containerUri": {
 			"type": "string",
@@ -86,6 +94,9 @@
 					"KaggleApi_password": {
 						"value": "[parameters('KaggleApi_password')]"
 					},
+					"AzureDatabricksLinkedService_accessToken": {
+						"value": "[parameters('AzureDatabricksLinkedService_accessToken')]"
+					},
 					"AzureFunction1_properties_typeProperties_functionAppUrl": {
 						"value": "[parameters('AzureFunction1_properties_typeProperties_functionAppUrl')]"
 					},
@@ -103,6 +114,9 @@
 					},
 					"KaggleApi_properties_typeProperties_userName": {
 						"value": "[parameters('KaggleApi_properties_typeProperties_userName')]"
+					},
+					"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+						"value": "[parameters('AzureDatabricksLinkedService_properties_typeProperties_existingClusterId')]"
 					}
 				}
 			},
