@@ -1,0 +1,89 @@
+{
+	"name": "sp500_companies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "sp500_companies.csv",
+				"folderPath": "bronze/sp-500-stocks.zip",
+				"fileSystem": "adf"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Exchange",
+				"type": "String"
+			},
+			{
+				"name": "Symbol",
+				"type": "String"
+			},
+			{
+				"name": "Shortname",
+				"type": "String"
+			},
+			{
+				"name": "Longname",
+				"type": "String"
+			},
+			{
+				"name": "Sector",
+				"type": "String"
+			},
+			{
+				"name": "Industry",
+				"type": "String"
+			},
+			{
+				"name": "Currentprice",
+				"type": "String"
+			},
+			{
+				"name": "Marketcap",
+				"type": "String"
+			},
+			{
+				"name": "Ebitda",
+				"type": "String"
+			},
+			{
+				"name": "Revenuegrowth",
+				"type": "String"
+			},
+			{
+				"name": "City",
+				"type": "String"
+			},
+			{
+				"name": "State",
+				"type": "String"
+			},
+			{
+				"name": "Country",
+				"type": "String"
+			},
+			{
+				"name": "Fulltimeemployees",
+				"type": "String"
+			},
+			{
+				"name": "Longbusinesssummary",
+				"type": "String"
+			},
+			{
+				"name": "Weight",
+				"type": "String"
+			}
+		]
+	}
+}
