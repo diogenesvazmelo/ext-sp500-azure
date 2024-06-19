@@ -635,7 +635,8 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobStorageLocation",
-						"container": "bronze"
+						"folderPath": "bronze",
+						"container": "adf"
 					}
 				}
 			},
