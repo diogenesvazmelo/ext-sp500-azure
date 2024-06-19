@@ -8,6 +8,12 @@
 		"AzureBlobStorage1_connectionString": {
 			"value": ""
 		},
+		"AzureDataLakeStorage1_accountKey": {
+			"value": ""
+		},
+		"AzureDatabricksLinkedService_accessToken": {
+			"value": ""
+		},
 		"AzureFunction1_functionKey": {
 			"value": ""
 		},
@@ -17,8 +23,11 @@
 		"KaggleApi_password": {
 			"value": ""
 		},
-		"AzureDatabricksLinkedService_accessToken": {
-			"value": ""
+		"AzureDataLakeStorage1_properties_typeProperties_url": {
+			"value": "https://extsp500adls2.dfs.core.windows.net/"
+		},
+		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
+			"value": "0617-024657-5j5slhdr"
 		},
 		"AzureFunction1_properties_typeProperties_functionAppUrl": {
 			"value": "https://kaggle-sp500-consumer-2.azurewebsites.net"
@@ -37,9 +46,6 @@
 		},
 		"KaggleApi_properties_typeProperties_userName": {
 			"value": "digenesvazmelo"
-		},
-		"AzureDatabricksLinkedService_properties_typeProperties_existingClusterId": {
-			"value": "0617-024657-5j5slhdr"
 		},
 		"containerUri": {
 			"value": ""
