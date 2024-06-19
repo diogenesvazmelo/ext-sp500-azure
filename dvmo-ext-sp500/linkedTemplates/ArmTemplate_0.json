@@ -259,6 +259,7 @@
 				"typeProperties": {
 					"location": {
 						"type": "AzureBlobFSLocation",
+						"fileName": "sp-500-stocks.zip",
 						"folderPath": "raw",
 						"fileSystem": "adf"
 					}
