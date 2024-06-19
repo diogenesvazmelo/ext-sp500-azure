@@ -588,10 +588,6 @@
 						"type": "AzureBlobFSLocation",
 						"folderPath": "raw",
 						"fileSystem": "adf"
-					},
-					"compression": {
-						"type": "ZipDeflate",
-						"level": "Optimal"
 					}
 				}
 			},
