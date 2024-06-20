@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "dataflow1_copy1",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -10,13 +10,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "sp500stocks"
-				},
-				{
-					"dataset": {
-						"referenceName": "sp500_companies",
-						"type": "DatasetReference"
-					},
-					"name": "sp500companies"
 				}
 			],
 			"sinks": [
@@ -26,13 +19,6 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
-				},
-				{
-					"dataset": {
-						"referenceName": "silversp500companies",
-						"type": "DatasetReference"
-					},
-					"name": "sink2"
 				}
 			],
 			"transformations": [
@@ -54,40 +40,12 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> sp500stocks",
-				"source(output(",
-				"          Exchange as string,",
-				"          Symbol as string,",
-				"          Shortname as string,",
-				"          Longname as string,",
-				"          Sector as string,",
-				"          Industry as string,",
-				"          Currentprice as string,",
-				"          Marketcap as string,",
-				"          Ebitda as string,",
-				"          Revenuegrowth as string,",
-				"          City as string,",
-				"          State as string,",
-				"          Country as string,",
-				"          Fulltimeemployees as string,",
-				"          Longbusinesssummary as string,",
-				"          Weight as string",
-				"     ),",
-				"     allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> sp500companies",
 				"sp500stocks derive(FolderName = 'proyecto_sp500_'+Date+'.csv') ~> derivedColumn1",
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     rowUrlColumn:'FolderName',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink1",
-				"sp500companies sink(allowSchemaDrift: true,",
-				"     validateSchema: false,",
-				"     umask: 0022,",
-				"     preCommands: [],",
-				"     postCommands: [],",
-				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true) ~> sink2"
+				"     skipDuplicateMapOutputs: true) ~> sink1"
 			]
 		}
 	}
