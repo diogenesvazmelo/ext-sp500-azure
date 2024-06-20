@@ -13,6 +13,112 @@
 	},
 	"resources": [
 		{
+			"name": "[concat(parameters('factoryName'), '/Coletor3')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureDataLakeStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "Binary",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobFSLocation",
+						"folderPath": "bronze",
+						"fileSystem": "adf"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/CsvStocksSilver')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"container": "silver"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": "\""
+				},
+				"schema": [
+					{
+						"name": "Date",
+						"type": "String"
+					},
+					{
+						"name": "Symbol",
+						"type": "String"
+					},
+					{
+						"name": "Adj Close",
+						"type": "String"
+					},
+					{
+						"name": "Close",
+						"type": "String"
+					},
+					{
+						"name": "High",
+						"type": "String"
+					},
+					{
+						"name": "Low",
+						"type": "String"
+					},
+					{
+						"name": "Open",
+						"type": "String"
+					},
+					{
+						"name": "Volume",
+						"type": "String"
+					}
+				]
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "[concat(parameters('factoryName'), '/DestinationDataset_flx')]",
+			"type": "Microsoft.DataFactory/factories/datasets",
+			"apiVersion": "2018-06-01",
+			"properties": {
+				"linkedServiceName": {
+					"referenceName": "AzureBlobStorage1",
+					"type": "LinkedServiceReference"
+				},
+				"annotations": [],
+				"type": "DelimitedText",
+				"typeProperties": {
+					"location": {
+						"type": "AzureBlobStorageLocation",
+						"fileName": "sp500_stocks.csv",
+						"folderPath": "sp500_stocks",
+						"container": "bronze"
+					},
+					"columnDelimiter": ",",
+					"escapeChar": "\\",
+					"firstRowAsHeader": true,
+					"quoteChar": ""
+				},
+				"schema": []
+			},
+			"dependsOn": []
+		},
+		{
 			"name": "[concat(parameters('factoryName'), '/ExtZip')]",
 			"type": "Microsoft.DataFactory/factories/datasets",
 			"apiVersion": "2018-06-01",
@@ -764,6 +870,7 @@
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ExtZip')]",
 				"[concat(variables('factoryId'), '/datasets/ExtZip3')]",
+				"[concat(variables('factoryId'), '/datasets/Coletor3')]",
 				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
 			]
 		},
@@ -776,7 +883,14 @@
 					{
 						"name": "Raw - Ext Kaggle",
 						"type": "Copy",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Copiar para outro StgAcc",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -918,14 +1032,7 @@
 					{
 						"name": "Copiar para outro StgAcc",
 						"type": "Copy",
-						"dependsOn": [
-							{
-								"activity": "dataflow1",
-								"dependencyConditions": [
-									"Succeeded"
-								]
-							}
-						],
+						"dependsOn": [],
 						"policy": {
 							"timeout": "0.12:00:00",
 							"retry": 0,
@@ -950,7 +1057,7 @@
 								"type": "BinarySink",
 								"storeSettings": {
 									"type": "AzureBlobFSWriteSettings",
-									"copyBehavior": "FlattenHierarchy"
+									"copyBehavior": "PreserveHierarchy"
 								}
 							},
 							"enableStaging": false
@@ -978,6 +1085,7 @@
 			},
 			"dependsOn": [
 				"[concat(variables('factoryId'), '/datasets/ExtZip3')]",
+				"[concat(variables('factoryId'), '/datasets/Coletor3')]",
 				"[concat(variables('factoryId'), '/dataflows/dataflow1')]"
 			]
 		},
@@ -990,7 +1098,14 @@
 					{
 						"name": "dataflow1_copy1",
 						"type": "ExecuteDataFlow",
-						"dependsOn": [],
+						"dependsOn": [
+							{
+								"activity": "Copy data1",
+								"dependencyConditions": [
+									"Succeeded"
+								]
+							}
+						],
 						"policy": {
 							"timeout": "0.02:00:00",
 							"retry": 0,
@@ -1016,6 +1131,54 @@
 							},
 							"traceLevel": "Fine"
 						}
+					},
+					{
+						"name": "Copy data1",
+						"type": "Copy",
+						"dependsOn": [],
+						"policy": {
+							"timeout": "0.12:00:00",
+							"retry": 0,
+							"retryIntervalInSeconds": 30,
+							"secureOutput": false,
+							"secureInput": false
+						},
+						"userProperties": [],
+						"typeProperties": {
+							"source": {
+								"type": "BinarySource",
+								"storeSettings": {
+									"type": "AzureBlobStorageReadSettings",
+									"recursive": true,
+									"deleteFilesAfterCompletion": false
+								},
+								"formatSettings": {
+									"type": "BinaryReadSettings"
+								}
+							},
+							"sink": {
+								"type": "BinarySink",
+								"storeSettings": {
+									"type": "AzureBlobFSWriteSettings",
+									"copyBehavior": "PreserveHierarchy"
+								}
+							},
+							"enableStaging": false
+						},
+						"inputs": [
+							{
+								"referenceName": "Binary6",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						],
+						"outputs": [
+							{
+								"referenceName": "Binary7",
+								"type": "DatasetReference",
+								"parameters": {}
+							}
+						]
 					}
 				],
 				"policy": {
