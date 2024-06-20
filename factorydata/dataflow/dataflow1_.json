@@ -1,5 +1,5 @@
 {
-	"name": "dataflow1",
+	"name": "dataflow1_",
 	"properties": {
 		"type": "MappingDataFlow",
 		"typeProperties": {
@@ -79,6 +79,9 @@
 				"derivedColumn1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     rowUrlColumn:'FolderName',",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true) ~> sink1",
 				"sp500companies sink(allowSchemaDrift: true,",
