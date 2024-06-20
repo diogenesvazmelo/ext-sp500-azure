@@ -1,18 +1,11 @@
 {
-	"name": "CopyKaggleSp500_flx_copy1",
+	"name": "CopyKaggleSp500_flx",
 	"properties": {
 		"activities": [
 			{
 				"name": "Raw - Ext Kaggle",
 				"type": "Copy",
-				"dependsOn": [
-					{
-						"activity": "Copiar para outro StgAcc",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
+				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
@@ -142,7 +135,14 @@
 			{
 				"name": "Copiar para outro StgAcc",
 				"type": "Copy",
-				"dependsOn": [],
+				"dependsOn": [
+					{
+						"activity": "dataflow1",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
 				"policy": {
 					"timeout": "0.12:00:00",
 					"retry": 0,
